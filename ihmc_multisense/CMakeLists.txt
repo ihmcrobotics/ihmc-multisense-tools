@@ -23,8 +23,3 @@ install(DIRECTORY launch/
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
         FILES_MATCHING PATTERN "*.launch"
 )
-
-install(DIRECTORY config/
-        DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/config
-        FILES_MATCHING PATTERN "*.yaml"
-)
