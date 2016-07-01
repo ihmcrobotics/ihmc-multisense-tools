@@ -2,7 +2,7 @@
         <arg name="namespace" default="" />
         <arg name="description_model" default="" />
         <arg name="multisense_ip" default="10.66.171.21" />
-        <arg name="multisense_resolution" default="1024x544x64">
+        <arg name="multisense_resolution" default="1024x544x64" />
 
         <include file="$(find ihmc_ros_common)/launch/robot_description_common.launch">
                 <arg name="robot_name" value="$(arg namespace)" />
