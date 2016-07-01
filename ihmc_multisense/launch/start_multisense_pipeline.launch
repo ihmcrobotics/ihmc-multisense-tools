@@ -1,17 +1,21 @@
 <launch>
         <arg name="namespace" default="" />
         <arg name="description_model" default="" />
+        <arg name="multisense_ip" default="10.66.171.21" />
+        <arg name="multisense_resolution" default="1024x544x64">
 
         <include file="$(find ihmc_ros_common)/launch/robot_description_common.launch">
                 <arg name="robot_name" value="$(arg namespace)" />
                 <arg name="model_file" value="$(arg description_model)" />
         </include>
 
-        <include file="$(find multisense_bringup)/multisense.launch" />
+        <include file="$(find multisense_bringup)/multisense.launch">
+                <arg name="ip_address" value="$(arg multisense_ip)" />
+        </include>
 
         <node name="set_motor_speed" pkg="dynamic_reconfigure" type="dynparam" args="set --timeout=10 /multisense motor_speed 2.5" />
 
-        <node name="set_resolution" pkg="dynamic_reconfigure" type="dynparam" args="set --timeout=10 /multisense resolution 1024x544x64" />
+        <node name="set_resolution" pkg="dynamic_reconfigure" type="dynparam" args="set --timeout=10 /multisense resolution $(arg multisense_resolution)" />
 
         <node name="transform_provider" pkg="transform_provider" type="transform_provider_node" />
         <include file="$(find scan_to_cloud)/launch/filter_scan.launch" />
