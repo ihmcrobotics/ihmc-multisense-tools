@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
   <name>ihmc_multisense_tools</name>
-  <version>0.7.10</version>
-  <description>The ihmc_multisense_tools package contains common tools for the Multisense series of sensor heads.</description>
+  <version>0.9.0</version>
+  <description>The ihmc_multisense_tools package contains common tools for the Multisense SL series of sensor heads.</description>
 
   <maintainer email="dstephen@ihmc.us">Doug Stephen</maintainer>
 
