@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package>
+  <name>scan_to_cloud</name>
+  <version>0.9.0</version>
+  <description>The scan_to_cloud package</description>
+
+  <maintainer email="dstephen@ihmc.us">Doug Stephen</maintainer>
+
+  <license>BSD-3-Clause</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>laser_assembler</build_depend>
+  <build_depend>laser_filters</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>std_msgs</build_depend>
+
+  <run_depend>pcl_msgs</run_depend>
+  <run_depend>pcl_conversions</run_depend>
+  <run_depend>pcl_ros</run_depend>
+  <run_depend>libpcl-all</run_depend>
+  <run_depend>laser_assembler</run_depend>
+  <run_depend>multisense_bringup</run_depend>
+  <run_depend>laser_filters</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>sensor_msgs</run_depend>
+  <run_depend>std_msgs</run_depend>
+
+</package>
