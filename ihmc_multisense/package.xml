@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>ihmc_multisense</name>
-  <version>0.1.0</version>
+  <version>0.9.0</version>
   <description>IHMC Multisense package</description>
 
   <author email="dstephen@ihmc.us">Doug Stephen</author>
