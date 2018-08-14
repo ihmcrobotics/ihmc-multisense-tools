@@ -1,0 +1,26 @@
+<launch>
+
+  <arg name="mtu"        default="7200" />
+  <arg name="sensor"     default="SL" />
+  <arg name="launch_robot_state_publisher" default="true" />
+  <arg name="ip_address_right" default="192.168.101.101" />
+  <arg name="namespace_right"  default="multisense_right" />
+
+  <!-- Robot state publisher -->
+  <group if = "$(arg launch_robot_state_publisher)">
+    <param name="robot_description"
+           textfile="$(find multisense_description)/urdf/multisense$(arg sensor).urdf"/>
+    <node pkg="robot_state_publisher" type="state_publisher" name="$(arg namespace_right)_state_publisher">
+      <param name="publish_frequency" type="double" value="100.0" />
+      <remap from="joint_states" to="/$(arg namespace_right)/joint_states" />
+      <param name="tf_prefix" value="/$(arg namespace_right)" />
+    </node>
+  </group>
+
+  <!-- ROS Driver -->
+   <node pkg="multisense_ros" ns="$(arg namespace_right)" type="ros_driver" name="multisense_driver_right" output="screen">
+     <param name="sensor_ip"   value="$(arg ip_address_right)" />
+     <param name="sensor_mtu"  value="$(arg mtu)" />
+     <param name="tf_prefix"   value="/$(arg namespace_right)" />
+  </node>
+</launch>
