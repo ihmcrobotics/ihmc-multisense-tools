@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <package>
-  <name>scan_to_cloud</name>
+  <name>stereo_cloud</name>
   <version>0.0.0</version>
-  <description>The scan_to_cloud package</description>
+  <description>The stereo_cloud package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <!-- Example:  -->

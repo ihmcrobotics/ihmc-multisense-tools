@@ -22,7 +22,7 @@
   </group>
 
 
-  <node pkg="scan_to_cloud" type="periodic_assembler" name="periodic_assembler"/>
-  <node pkg="scan_to_cloud" type="voxelCloudPublisher.py" name="VoxelCloudPublisher" output="screen"/>
+  <node pkg="stereo_cloud" type="periodic_assembler" name="periodic_assembler"/>
+  <node pkg="stereo_cloud" type="voxelCloudPublisher.py" name="VoxelCloudPublisher" output="screen"/>
 
 </launch>
