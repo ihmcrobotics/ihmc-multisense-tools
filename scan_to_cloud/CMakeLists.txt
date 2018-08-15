@@ -8,10 +8,29 @@ find_package(catkin REQUIRED COMPONENTS
   sensor_msgs
   std_msgs
   multisense_bringup
+  message_generation
+  geometry_msgs
+)
+
+add_message_files(
+  DIRECTORY msg
+  FILES
+  PointCloud2WithSource.msg
+)
+
+generate_messages(DEPENDENCIES
+  std_msgs
+  sensor_msgs
+  geometry_msgs
 )
 
 catkin_package(
-
+  CATKIN_DEPENDS
+  message_runtime
+  std_msgs
+  sensor_msgs
+  geometry_msgs
+  message_generation
 )
 
 include_directories(

@@ -9,7 +9,7 @@ from geometry_msgs.msg import Point
 
 
 mapFrame = "/multisense/head"
-sensorFrame = "/odom"
+sensorFrame = "/multisense/left_camera_optical_frame"
 
 def callback(data) :
     print("DATA RECEIVED:")
@@ -40,7 +40,7 @@ if __name__ == '__main__':
         print('starting VoxelCloudPublisher')
         rospy.init_node('pointCloudWithOriginPublisher')
         listener = tf.TransformListener(True, rospy.Duration.from_sec(30.0))
-        cloudWithSourcePublisher = rospy.Publisher('singleScanAsCloudWithSource', PointCloud2WithSource,queue_size=10)
+        cloudWithSourcePublisher = rospy.Publisher('/multisense/filtered_cloud', PointCloud2WithSource,queue_size=10)
         rospy.Subscriber("/filter_chain/output", PointCloud2, callback)
         rospy.spin()
  

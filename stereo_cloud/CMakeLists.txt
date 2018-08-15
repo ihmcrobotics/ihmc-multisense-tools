@@ -9,19 +9,20 @@ find_package(catkin REQUIRED COMPONENTS
   std_msgs
   geometry_msgs
   message_generation
+  scan_to_cloud
 )
 
-add_message_files(
-  DIRECTORY msg
-  FILES
-  PointCloud2WithSource.msg
-)
+#add_message_files(
+#  DIRECTORY msg
+#  FILES
+#  PointCloud2WithSource.msg
+#)
 
-generate_messages(DEPENDENCIES
-  std_msgs
-  sensor_msgs
-  geometry_msgs
-)
+#generate_messages(DEPENDENCIES
+#  std_msgs
+#  sensor_msgs
+#  geometry_msgs
+#)
 
 catkin_package(
   CATKIN_DEPENDS
@@ -30,6 +31,7 @@ catkin_package(
   sensor_msgs
   geometry_msgs
   message_generation
+  scan_to_cloud
 )
 
 include_directories(
