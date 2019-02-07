@@ -38,7 +38,17 @@
 
   <node pkg="scan_to_cloud" type="periodic_assembler" name="periodic_assembler"/>
 
-  <node pkg="nodelet" type="nodelet" name="pcl_manager" args="manager" output="screen" />
+  <node pkg="nodelet" type="nodelet" name="PassThrough" args="load pcl/PassThrough pcl_manager" output="screen" respawn="true">
+     <remap from="~input" to="/multisense/image_points2_color" />
+     <remap from="~output" to="/multisense/image_points2_color_world" />
+     <rosparam>
+       filter_field_name: z
+       filter_limit_min: -10.0
+       filter_limit_max:  10.0
+       input_frame: /multisense/left_camera_optical_frame
+       output_frame: /multisense/head
+     </rosparam>
+  </node>
 
-
+  <node pkg="nodelet" type="nodelet" name="pcl_manager" args="manager" output="screen" respawn="true" />
 </launch>
